@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Sovereign | Mauritian Night Voyages 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS Reset & Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0a0f1c;
+            --navy-dark: #050811;
+            --navy-light: #131a2a;
+            --gold: #c9a96e;
+            --gold-light: #e5d4b3;
+            --gold-dark: #a88b4a;
+            --white: #ffffff;
+            --gray-light: #e8eaef;
+            --gray: #8a95b2;
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            --shadow-gold: 0 0 40px rgba(201, 169, 110, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 15px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--navy);
+            color: var(--gray-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+            letter-spacing: 0.4px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--white);
+            font-weight: 400;
+            letter-spacing: 1.8px;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: 4.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 300;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 0.5px;
+            background-color: var(--gold);
+            bottom: -12px;
+            left: 0;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-weight: 300;
+        }
+
+        section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== Navigation ===== */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 25px 30px;
+            transition: var(--transition);
+            background: rgba(5, 8, 17, 0);
+            backdrop-filter: blur(0px);
+        }
+
+        .nav-container.scrolled {
+            background: rgba(5, 8, 17, 0.92);
+            backdrop-filter: blur(12px);
+            padding: 20px 30px;
+            border-bottom: 0.5px solid rgba(201, 169, 110, 0.08);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .logo {
+            position: absolute;
+            left: 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            z-index: 1001;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            cursor: pointer;
+            z-index: 1001;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -5px);
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(5, 8, 17, 0.98);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .nav-links li {
+            margin: 22px 0;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.5s ease;
+        }
+
+        .nav-menu.active .nav-links li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-links li:nth-child(1) { transition-delay: 0.2s; }
+        .nav-links li:nth-child(2) { transition-delay: 0.3s; }
+        .nav-links li:nth-child(3) { transition-delay: 0.4s; }
+        .nav-links li:nth-child(4) { transition-delay: 0.5s; }
+        .nav-links li:nth-child(5) { transition-delay: 0.6s; }
+        .nav-links li:nth-child(6) { transition-delay: 0.7s; }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 1.6rem;
+            font-family: 'Cormorant Garamond', serif;
+            text-decoration: none;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            display: inline-block;
+            transition: var(--transition);
+            position: relative;
+            font-weight: 300;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 0.5px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 38px;
+            background-color: transparent;
+            color: var(--gold);
+            border: 0.5px solid var(--gold);
+            border-radius: 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background-color: rgba(201, 169, 110, 0.05);
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-2px);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--navy);
+            border: 0.5px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            height: 100vh;
+            min-height: 900px;
+            background: linear-gradient(rgba(5, 8, 17, 0.7), rgba(5, 8, 17, 0.9)), url('pics/yach1.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, var(--navy));
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 0 30px;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        .hero h1 {
+            opacity: 0;
+            animation: fadeInUp 1.2s forwards 0.7s;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 45px;
+            color: var(--gray-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1s;
+        }
+
+        .hero .btn {
+            opacity: 0;
+            animation: fadeIn 1s forwards 1.2s;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: 0.5;
+            transition: var(--transition);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator:hover {
+            opacity: 1;
+        }
+
+        /* ===== Continuous Image Slider ===== */
+        .image-slider {
+            position: relative;
+            height: 70vh;
+            min-height: 600px;
+            overflow: hidden;
+            background: var(--navy-dark);
+        }
+
+        .slider-track {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            animation: slide 50s linear infinite;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        .slider-slide {
+            height: 100%;
+            width: 33.333vw;
+            min-width: 33.333vw;
+            margin: 0 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+            filter: brightness(0.7);
+        }
+
+        .slider-slide:hover .slider-image {
+            transform: scale(1.02);
+            filter: brightness(0.9);
+        }
+
+        .slider-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(5, 8, 17, 0.4) 0%, transparent 50%, rgba(5, 8, 17, 0.4) 100%);
+            pointer-events: none;
+        }
+
+        .slider-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .slider-slide:hover .slider-content {
+            opacity: 1;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-33.333vw * 5));
+            }
+        }
+
+        /* ===== Experience Section ===== */
+        .experience {
+            background-color: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.03) 0%, transparent 70%);
+        }
+
+        .experience-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .experience-image {
+            height: 550px;
+            background: url('pics/yach2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: var(--transition-slow);
+        }
+
+        .experience-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .experience-image:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 0.5px solid var(--gold);
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .experience-details {
+            padding-left: 20px;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: var(--transition-slow);
+        }
+
+        .experience-details.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .experience-list {
+            list-style: none;
+            margin: 35px 0;
+        }
+
+        .experience-list li {
+            margin-bottom: 18px;
+            padding-left: 28px;
+            position: relative;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .experience-list li:before {
+            content: '↠';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: normal;
+            font-size: 1rem;
+        }
+
+        /* ===== Setting Section ===== */
+        .setting {
+            background-color: var(--navy-dark);
+            position: relative;
+        }
+
+        .setting:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .setting-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .setting-details {
+            padding-right: 20px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: var(--transition-slow);
+        }
+
+        .setting-details.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .setting-image {
+            height: 550px;
+            background: url('pics/yach3.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: var(--transition-slow);
+        }
+
+        .setting-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .setting-image:before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 0.5px solid rgba(201, 169, 110, 0.15);
+            z-index: -1;
+        }
+
+        /* ===== Amenities Section ===== */
+        .amenities {
+            background-color: var(--navy);
+            position: relative;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .amenity-item {
+            text-align: center;
+            padding: 35px 20px;
+            border: 0.5px solid rgba(201, 169, 110, 0.08);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .amenity-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .amenity-item:hover {
+            border-color: rgba(201, 169, 110, 0.25);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .amenity-icon {
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        /* ===== Booking Section ===== */
+        .booking {
+            text-align: center;
+            background: linear-gradient(rgba(5, 8, 17, 0.92), rgba(5, 8, 17, 0.96));
+            position: relative;
+            padding: 120px 20px;
+            border-top: 0.5px solid rgba(201, 169, 110, 0.08);
+            border-bottom: 0.5px solid rgba(201, 169, 110, 0.08);
+        }
+
+        .booking-content {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .booking h2 {
+            color: var(--gold-light);
+        }
+
+        .booking h2:after {
+            background-color: var(--white);
+        }
+
+        .booking-details {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 40px 0 50px;
+            flex-wrap: wrap;
+        }
+
+        .booking-item {
+            text-align: center;
+        }
+
+        .booking-item h4 {
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .booking-item p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact {
+            background-color: var(--navy-dark);
+            position: relative;
+        }
+
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.02) 0%, transparent 70%);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .contact-details {
+            margin-bottom: 35px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-right: 12px;
+            margin-top: 4px;
+        }
+
+        .contact-form {
+            background-color: rgba(19, 26, 42, 0.25);
+            padding: 45px;
+            border: 0.5px solid rgba(201, 169, 110, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gray-light);
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 0;
+            background-color: transparent;
+            border: none;
+            border-bottom: 0.5px solid rgba(201, 169, 110, 0.2);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-bottom-color: var(--gold);
+        }
+
+        /* ===== FAQ Section ===== */
+        .faq {
+            background-color: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 0.5px solid rgba(201, 169, 110, 0.08);
+            margin-bottom: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: var(--transition-slow);
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-question {
+            padding: 22px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.15rem;
+            color: var(--white);
+            transition: var(--transition);
+            font-weight: 300;
+        }
+
+        .faq-question:hover h3 {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            color: var(--gold);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-answer-content {
+            padding: 0 0 25px 0;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: var(--navy-dark);
+            padding: 60px 20px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .footer-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        .footer-tags {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-tag {
+            color: var(--gray);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            padding: 0 12px;
+        }
+
+        .footer-tag:not(:last-child):after {
+            content: '•';
+            position: absolute;
+            right: -14px;
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 0.5px solid rgba(201, 169, 110, 0.08);
+            color: var(--gray);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-8px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-4px) translateX(-50%);
+            }
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            h2 {
+                font-size: 2.4rem;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .slider-slide {
+                width: 40vw;
+                min-width: 40vw;
+            }
+            
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-40vw * 5));
+                }
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 80px 20px;
+            }
+            
+            .experience-content,
+            .setting-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .experience-image,
+            .setting-image {
+                height: 450px;
+            }
+            
+            .image-slider {
+                height: 60vh;
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.4rem;
+            }
+            
+            .hero {
+                min-height: 800px;
+                background-attachment: scroll;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .btn {
+                padding: 14px 30px;
+                font-size: 0.75rem;
+            }
+            
+            .booking {
+                padding: 90px 20px;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .amenities-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .booking-details {
+                gap: 30px;
+            }
+            
+            .image-slider {
+                height: 50vh;
+                min-height: 400px;
+            }
+            
+            .slider-slide {
+                width: 50vw;
+                min-width: 50vw;
+            }
+            
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-50vw * 5));
+                }
+            }
+            
+            .nav-links a {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .experience-image,
+            .setting-image {
+                height: 350px;
+            }
+            
+            .image-slider {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .footer-tags {
+                gap: 15px;
+            }
+            
+            .footer-tag {
+                padding: 0 10px;
+                font-size: 0.75rem;
+            }
+            
+            .nav-container {
+                padding: 20px;
+            }
+            
+            .logo {
+                left: 20px;
+                font-size: 1.4rem;
+            }
+            
+            .slider-slide {
+                width: 70vw;
+                min-width: 70vw;
+            }
+            
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-70vw * 5));
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-content">
+            <a href="#" class="logo">Azure Sovereign</a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#slider">The Vessel</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#booking">Reserve</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Mauritian Night Voyages 2026</p>
+            <h1>Azure Sovereign</h1>
+            <p class="hero-description">A celestial passage across the Indian Ocean's most tranquil waters. Experience night sailing redefined aboard the world's most exclusive 48-meter superyacht.</p>
+            <a href="#booking" class="btn btn-gold">Reserve Your Passage <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <a href="#slider" class="scroll-indicator">
+            <i class="fas fa-chevron-down" style="color: var(--gold); font-size: 1.3rem;"></i>
+        </a>
+    </section>
+
+    <!-- Continuous Image Slider -->
+    <section id="slider" class="image-slider">
+        <div class="slider-track">
+            <!-- Duplicate slides for continuous effect -->
+            <div class="slider-slide">
+                <img src="pics/yach1.jpg" alt="Azure Sovereign Main Salon" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach2.jpg" alt="Sun Deck Observatory" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach3.jpg" alt="Master Suite" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach4.jpg" alt="Al Fresco Dining" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach5.jpg" alt="Bow Lounge & Jacuzzi" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="slider-slide">
+                <img src="pics/yach1.jpg" alt="Azure Sovereign Main Salon" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach2.jpg" alt="Sun Deck Observatory" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach3.jpg" alt="Master Suite" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach4.jpg" alt="Al Fresco Dining" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+            <div class="slider-slide">
+                <img src="pics/yach5.jpg" alt="Bow Lounge & Jacuzzi" class="slider-image">
+                <div class="slider-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-image fade-left"></div>
+                <div class="experience-details fade-right">
+                    <h2>The Experience</h2>
+                    <p>An intimate voyage limited to twelve guests, where every detail is curated for those who seek exceptional nights beneath Mauritian constellations.</p>
+                    <ul class="experience-list">
+                        <li>Private chef's tasting menu under constellations</li>
+                        <li>Veuve Clicquot champagne service</li>
+                        <li>Live acoustic ensemble performing ambient melodies</li>
+                        <li>Stargazing with onboard astronomer</li>
+                        <li>Personalized concierge service</li>
+                        <li>Mid-voyage swim in bioluminescent waters</li>
+                    </ul>
+                    <a href="#contact" class="btn">Inquire for Private Charter <i class="fas fa-star"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setting Section -->
+    <section class="setting">
+        <div class="container">
+            <div class="setting-content">
+                <div class="setting-details fade-left">
+                    <h2>Mauritian Nights</h2>
+                    <p>The west coast offers a unique maritime theatre. As we sail from Flic en Flac towards Le Morne Brabant, the mountain's silhouette creates a dramatic backdrop against the starlit sky.</p>
+                    <p>Our route follows ancient trading paths, passing sheltered coves where sea turtles nest and crystalline lagoons that glow with bioluminescent plankton.</p>
+                    <p>Each voyage is timed with lunar cycles—sailing during new moons for optimal stargazing, or full moons for romantic silver-lit waters.</p>
+                </div>
+                <div class="setting-image fade-right"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="amenities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Crafted Amenities</h2>
+            </div>
+            <div class="amenities-grid">
+                <div class="amenity-item fade-up">
+                    <div class="amenity-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h4>Curated Cellar</h4>
+                    <p>Premier cru champagnes and rare vintages from South African and French vineyards</p>
+                </div>
+                <div class="amenity-item fade-up" style="transition-delay: 0.1s">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h4>Gastronomic Artistry</h4>
+                    <p>Michelin-trained chef creating fusion of Mauritian flavours with French technique</p>
+                </div>
+                <div class="amenity-item fade-up" style="transition-delay: 0.2s">
+                    <div class="amenity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h4>Wellness at Sea</h4>
+                    <p>Onboard spa treatments using local essential oils and heated thalassotherapy pool</p>
+                </div>
+                <div class="amenity-item fade-up" style="transition-delay: 0.3s">
+                    <div class="amenity-icon">
+                        <i class="fas fa-binoculars"></i>
+                    </div>
+                    <h4>Celestial Navigation</h4>
+                    <p>Guided stargazing with astronomer and professional-grade telescopes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-content">
+                <h2>Reserve Your Passage</h2>
+                <p>Three voyages per week, limited to twelve guests. Our season runs from May to November, avoiding cyclone season for optimal conditions.</p>
+                <div class="booking-details">
+                    <div class="booking-item">
+                        <h4>Voyage Schedule</h4>
+                        <p>Wednesday, Friday & Saturday<br>May through November</p>
+                    </div>
+                    <div class="booking-item">
+                        <h4>Embarkation</h4>
+                        <p>18:30 at Turtle Bay Marina<br>Sailing at 19:00 precisely</p>
+                    </div>
+                    <div class="booking-item">
+                        <h4>Investment</h4>
+                        <p>From €850 per guest<br>Full yacht charter available</p>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-gold">Secure Your Reservation <i class="fas fa-lock"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-grid">
+                    <div class="contact-info fade-left">
+                        <h3>Concierge</h3>
+                        <p>Our dedicated team is available to craft your perfect Mauritian night voyage. For private charters, corporate events, or celebrations, we tailor every detail.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4>Turtle Bay Marina</h4>
+                                    <p>West Coast, Mauritius<br>Private Dock B, Slip 7</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <h4>Reservations</h4>
+                                    <p>+230 5 727 8888<br>9:00 - 18:00 Mauritius Time</p>
+                                </div>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h4>Concierge</h4>
+                                    <p>concierge@azuresovereign.mu<br>Response within 4 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form fade-right">
+                        <form id="inquiryForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Preferred Voyage Date</label>
+                                <input type="text" id="date" class="form-control" placeholder="Month & preferred day" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <input type="number" id="guests" class="form-control" min="1" max="12" required>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%; margin-top: 15px;">Submit Inquiry <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Details</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item fade-up">
+                    <div class="faq-question">
+                        <h3>Cancellation policy?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Full refund 14+ days prior. 50% refund 7-14 days prior. Non-refundable within 7 days but transferable. Severe weather: reschedule or full refund.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up" style="transition-delay: 0.1s">
+                    <div class="faq-question">
+                        <h3>Dress code?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Evening elegant attire. Gentlemen: tailored trousers, collared shirts. Ladies: cocktail dresses, elegant separates. Light wrap recommended.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up" style="transition-delay: 0.2s">
+                    <div class="faq-question">
+                        <h3>Children permitted?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Designed for adults, 16+ recommended. Private charters: 12+ with prior arrangement. Not equipped for infants or toddlers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-up" style="transition-delay: 0.3s">
+                    <div class="faq-question">
+                        <h3>Safety measures?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Exceeds Mauritian maritime regulations. Comprehensive safety equipment. Trained crew. State-of-the-art navigation systems. Safety briefing before departure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Azure Sovereign</div>
+            <p>Mauritian Night Voyages 2026</p>
+            <div class="footer-tags">
+                <span class="footer-tag">Indian Ocean</span>
+                <span class="footer-tag">Luxury Sailing</span>
+                <span class="footer-tag">Mauritian Nights</span>
+                <span class="footer-tag">Celestial Voyages</span>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Azure Sovereign Experience Mauritius. All rights reserved.</p>
+                <p>Turtle Bay Marina, West Coast, Mauritius | Maritime License #MY-8473-LX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navContainer = document.querySelector('.nav-container');
+            if (window.scrollY > 50) {
+                navContainer.classList.add('scrolled');
+            } else {
+                navContainer.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    const answer = item.querySelector('.faq-answer');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+        
+        // Scroll Animations
+        const fadeElements = {
+            left: document.querySelectorAll('.fade-left'),
+            right: document.querySelectorAll('.fade-right'),
+            up: document.querySelectorAll('.fade-up')
+        };
+        
+        const fadeInOnScroll = function() {
+            // Fade left elements
+            fadeElements.left.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 80);
+                }
+            });
+            
+            // Fade right elements
+            fadeElements.right.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 80);
+                }
+            });
+            
+            // Fade up elements
+            fadeElements.up.forEach((element, index) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 80;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    setTimeout(() => {
+                        element.classList.add('visible');
+                    }, index * 80);
+                }
+            });
+            
+            // FAQ items
+            faqItems.forEach((item, index) => {
+                const elementTop = item.getBoundingClientRect().top;
+                const elementVisible = 80;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 80);
+                }
+            });
+            
+            // Amenity items
+            const amenityItems = document.querySelectorAll('.amenity-item');
+            amenityItems.forEach((item, index) => {
+                const elementTop = item.getBoundingClientRect().top;
+                const elementVisible = 80;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+            
+            // Experience and Setting sections
+            const expImage = document.querySelector('.experience-image');
+            const expDetails = document.querySelector('.experience-details');
+            const setImage = document.querySelector('.setting-image');
+            const setDetails = document.querySelector('.setting-details');
+            
+            if (expImage) {
+                const expImageTop = expImage.getBoundingClientRect().top;
+                if (expImageTop < window.innerHeight - 80) {
+                    expImage.classList.add('visible');
+                    setTimeout(() => {
+                        expDetails.classList.add('visible');
+                    }, 200);
+                }
+            }
+            
+            if (setDetails) {
+                const setDetailsTop = setDetails.getBoundingClientRect().top;
+                if (setDetailsTop < window.innerHeight - 80) {
+                    setDetails.classList.add('visible');
+                    setTimeout(() => {
+                        setImage.classList.add('visible');
+                    }, 200);
+                }
+            }
+        };
+        
+        // Form submission
+        const inquiryForm = document.getElementById('inquiryForm');
+        if (inquiryForm) {
+            inquiryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real implementation, this would submit to a server
+                alert('Thank you for your inquiry. Our concierge will contact you within 4 hours.');
+                inquiryForm.reset();
+            });
+        }
+        
+        // Parallax effect on scroll for hero background
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.4 + 'px';
+            }
+            
+            fadeInOnScroll();
+        });
+        
+        // Initialize animations on load
+        window.addEventListener('load', function() {
+            fadeInOnScroll();
+            
+            // Open first FAQ by default
+            if (faqItems.length > 0) {
+                setTimeout(() => {
+                    faqItems[0].classList.add('active');
+                    const firstAnswer = faqItems[0].querySelector('.faq-answer');
+                    firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+                }, 800);
+            }
+        });
+        
+        // Current year for footer
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearElement = document.querySelector('.footer-bottom p');
+            if (yearElement) {
+                yearElement.innerHTML = yearElement.innerHTML.replace('2026', new Date().getFullYear());
+            }
+        });
+    </script>
+</body>
+</html>
