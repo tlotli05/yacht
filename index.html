@@ -35,6 +35,7 @@
         html {
             scroll-behavior: smooth;
             font-size: 15px;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -45,6 +46,7 @@
             overflow-x: hidden;
             font-weight: 300;
             letter-spacing: 0.4px;
+            touch-action: pan-y;
         }
 
         h1, h2, h3, h4, h5 {
@@ -160,6 +162,8 @@
             text-decoration: none;
             letter-spacing: 2px;
             z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
         }
 
         .hamburger {
@@ -171,6 +175,7 @@
             cursor: pointer;
             z-index: 1001;
             position: relative;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .hamburger span {
@@ -207,6 +212,7 @@
             align-items: center;
             transition: right 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
+            -webkit-overflow-scrolling: touch;
         }
 
         .nav-menu.active {
@@ -248,6 +254,7 @@
             transition: var(--transition);
             position: relative;
             font-weight: 300;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .nav-links a:after {
@@ -290,6 +297,8 @@
             text-decoration: none;
             position: relative;
             overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .btn:before {
@@ -337,11 +346,10 @@
         .hero {
             height: 100vh;
             min-height: 900px;
-            background: linear-gradient(rgba(5, 8, 17, 0.7), rgba(5, 8, 17, 0.9)), url('pics/yach1.jpg');
+            background: linear-gradient(rgba(5, 8, 17, 0.7), rgba(5, 8, 17, 0.9)), url('pics/yach4.jpg');
             background-size: cover;
             background-position: center 30%;
             background-repeat: no-repeat;
-            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -407,19 +415,61 @@
             opacity: 0.5;
             transition: var(--transition);
             animation: bounce 2s infinite;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .scroll-indicator:hover {
             opacity: 1;
         }
 
-        /* ===== Continuous Image Slider ===== */
+        /* ===== Slider Section with Heading ===== */
+        .slider-section {
+            padding: 120px 20px 0;
+            background-color: var(--navy-dark);
+            position: relative;
+        }
+
+        .slider-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .slider-heading {
+            text-align: center;
+            margin-bottom: 70px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        .slider-heading h2 {
+            color: var(--gold-light);
+        }
+
+        .slider-heading h2:after {
+            background-color: var(--white);
+        }
+
+        .slider-heading p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* ===== Improved Image Slider ===== */
         .image-slider {
             position: relative;
             height: 70vh;
             min-height: 600px;
             overflow: hidden;
             background: var(--navy-dark);
+            touch-action: pan-y pinch-zoom;
         }
 
         .slider-track {
@@ -428,10 +478,11 @@
             top: 0;
             left: 0;
             height: 100%;
-            animation: slide 50s linear infinite;
+            animation: slide 30s linear infinite;
+            will-change: transform;
         }
 
-        .slider-track:hover {
+        .slider-track.paused {
             animation-play-state: paused;
         }
 
@@ -442,6 +493,7 @@
             margin: 0 0.5px;
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .slider-image {
@@ -450,6 +502,8 @@
             object-fit: cover;
             transition: var(--transition-slow);
             filter: brightness(0.7);
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         .slider-slide:hover .slider-image {
@@ -811,6 +865,9 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             transition: var(--transition);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
 
         .form-control:focus {
@@ -861,6 +918,7 @@
             justify-content: space-between;
             align-items: center;
             transition: var(--transition);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .faq-question h3 {
@@ -1028,8 +1086,8 @@
             }
             
             .slider-slide {
-                width: 40vw;
-                min-width: 40vw;
+                width: 33.333vw;
+                min-width: 33.333vw;
             }
             
             @keyframes slide {
@@ -1037,7 +1095,7 @@
                     transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(calc(-40vw * 5));
+                    transform: translateX(calc(-33.333vw * 5));
                 }
             }
         }
@@ -1055,6 +1113,14 @@
                 padding: 80px 20px;
             }
             
+            .slider-section {
+                padding: 100px 20px 0;
+            }
+            
+            .slider-heading {
+                margin-bottom: 50px;
+            }
+            
             .experience-content,
             .setting-content,
             .contact-grid {
@@ -1065,11 +1131,26 @@
             .experience-image,
             .setting-image {
                 height: 450px;
+                min-height: 450px;
             }
             
             .image-slider {
                 height: 60vh;
                 min-height: 500px;
+            }
+            
+            .slider-slide {
+                width: 50vw;
+                min-width: 50vw;
+            }
+            
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-50vw * 5));
+                }
             }
         }
 
@@ -1100,6 +1181,18 @@
                 font-size: 0.75rem;
             }
             
+            .slider-section {
+                padding: 80px 20px 0;
+            }
+            
+            .slider-heading {
+                margin-bottom: 40px;
+            }
+            
+            .slider-heading p {
+                font-size: 1rem;
+            }
+            
             .booking {
                 padding: 90px 20px;
             }
@@ -1123,8 +1216,8 @@
             }
             
             .slider-slide {
-                width: 50vw;
-                min-width: 50vw;
+                width: 60vw;
+                min-width: 60vw;
             }
             
             @keyframes slide {
@@ -1132,12 +1225,16 @@
                     transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(calc(-50vw * 5));
+                    transform: translateX(calc(-60vw * 5));
                 }
             }
             
             .nav-links a {
                 font-size: 1.4rem;
+            }
+            
+            .nav-container {
+                padding: 20px;
             }
         }
 
@@ -1155,9 +1252,23 @@
                 font-size: 1rem;
             }
             
+            .slider-section {
+                padding: 60px 20px 0;
+            }
+            
+            .slider-heading {
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+            
+            .slider-heading h2 {
+                font-size: 1.6rem;
+            }
+            
             .experience-image,
             .setting-image {
                 height: 350px;
+                min-height: 350px;
             }
             
             .image-slider {
@@ -1178,14 +1289,9 @@
                 padding: 20px;
             }
             
-            .logo {
-                left: 20px;
-                font-size: 1.4rem;
-            }
-            
             .slider-slide {
-                width: 70vw;
-                min-width: 70vw;
+                width: 80vw;
+                min-width: 80vw;
             }
             
             @keyframes slide {
@@ -1193,8 +1299,42 @@
                     transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(calc(-70vw * 5));
+                    transform: translateX(calc(-80vw * 5));
                 }
+            }
+            
+            .contact-form {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .slider-slide {
+                width: 90vw;
+                min-width: 90vw;
+            }
+            
+            @keyframes slide {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-90vw * 5));
+                }
+            }
+            
+            .hero {
+                min-height: 700px;
+            }
+            
+            .experience-image,
+            .setting-image {
+                height: 300px;
+                min-height: 300px;
+            }
+            
+            .slider-heading h2 {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -1203,7 +1343,7 @@
     <!-- Navigation -->
     <nav class="nav-container">
         <div class="nav-content">
-            <a href="#" class="logo">Azure Sovereign</a>
+            <a href="#" class="logo" style="display: none;">Azure Sovereign</a>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -1235,50 +1375,100 @@
         </a>
     </section>
 
-    <!-- Continuous Image Slider -->
-    <section id="slider" class="image-slider">
-        <div class="slider-track">
-            <!-- Duplicate slides for continuous effect -->
-            <div class="slider-slide">
-                <img src="pics/yach1.jpg" alt="Azure Sovereign Main Salon" class="slider-image">
-                <div class="slider-overlay"></div>
+    <!-- Slider Section with Heading -->
+    <section id="slider" class="slider-section">
+        <div class="container">
+            <div class="slider-heading fade-up">
+                <h2>The Vessel</h2>
+                <p>Azure Sovereign is a 48-meter masterpiece of maritime engineering and design. Each space is meticulously crafted to provide unparalleled luxury under the Mauritian night sky.</p>
             </div>
-            <div class="slider-slide">
-                <img src="pics/yach2.jpg" alt="Sun Deck Observatory" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach3.jpg" alt="Master Suite" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach4.jpg" alt="Al Fresco Dining" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach5.jpg" alt="Bow Lounge & Jacuzzi" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <!-- Duplicate for seamless loop -->
-            <div class="slider-slide">
-                <img src="pics/yach1.jpg" alt="Azure Sovereign Main Salon" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach2.jpg" alt="Sun Deck Observatory" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach3.jpg" alt="Master Suite" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach4.jpg" alt="Al Fresco Dining" class="slider-image">
-                <div class="slider-overlay"></div>
-            </div>
-            <div class="slider-slide">
-                <img src="pics/yach5.jpg" alt="Bow Lounge & Jacuzzi" class="slider-image">
-                <div class="slider-overlay"></div>
+        </div>
+        
+        <!-- Improved Continuous Image Slider -->
+        <div class="image-slider">
+            <div class="slider-track">
+                <!-- Duplicate slides for continuous effect -->
+                <div class="slider-slide">
+                    <img src="pics/yach1.jpg" alt="Azure Sovereign Main Salon" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Main Salon</h3>
+                        <p>Elegant gathering space with panoramic ocean views</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach2.jpg" alt="Sun Deck Observatory" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Sun Deck</h3>
+                        <p>Open-air lounge with 360° views and telescope</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach3.jpg" alt="Master Suite" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Master Suite</h3>
+                        <p>Private sanctuary with balcony overlooking the sea</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach4.jpg" alt="Al Fresco Dining" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Al Fresco Dining</h3>
+                        <p>Gourmet dining under the stars</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach5.jpg" alt="Bow Lounge & Jacuzzi" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Bow Lounge</h3>
+                        <p>Intimate seating with jacuzzi and sea views</p>
+                    </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="slider-slide">
+                    <img src="pics/yach1.jpg" alt="Azure Sovereign Main Salon" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Main Salon</h3>
+                        <p>Elegant gathering space with panoramic ocean views</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach2.jpg" alt="Sun Deck Observatory" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Sun Deck</h3>
+                        <p>Open-air lounge with 360° views and telescope</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach3.jpg" alt="Master Suite" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Master Suite</h3>
+                        <p>Private sanctuary with balcony overlooking the sea</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach4.jpg" alt="Al Fresco Dining" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Al Fresco Dining</h3>
+                        <p>Gourmet dining under the stars</p>
+                    </div>
+                </div>
+                <div class="slider-slide">
+                    <img src="pics/yach5.jpg" alt="Bow Lounge & Jacuzzi" class="slider-image" loading="lazy">
+                    <div class="slider-overlay"></div>
+                    <div class="slider-content">
+                        <h3>Bow Lounge</h3>
+                        <p>Intimate seating with jacuzzi and sea views</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1529,18 +1719,29 @@
         const navMenu = document.querySelector('.nav-menu');
         const navLinks = document.querySelectorAll('.nav-links a');
         
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
         
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                document.body.style.overflow = '';
             });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
         
         // Navbar scroll effect
@@ -1566,7 +1767,7 @@
                     // Close mobile menu if open
                     hamburger.classList.remove('active');
                     navMenu.classList.remove('active');
-                    document.body.style.overflow = 'auto';
+                    document.body.style.overflow = '';
                     
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -1599,6 +1800,77 @@
                 }
             });
         });
+        
+        // Improved Slider with Mobile Support
+        const sliderTrack = document.querySelector('.slider-track');
+        let isPaused = false;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        // Pause on hover/touch
+        if (sliderTrack) {
+            sliderTrack.addEventListener('mouseenter', () => {
+                sliderTrack.classList.add('paused');
+            });
+            
+            sliderTrack.addEventListener('mouseleave', () => {
+                sliderTrack.classList.remove('paused');
+            });
+            
+            // Touch events for mobile
+            sliderTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                sliderTrack.classList.add('paused');
+            });
+            
+            sliderTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                setTimeout(() => {
+                    sliderTrack.classList.remove('paused');
+                }, 500);
+            });
+            
+            // Add hover content to slides
+            const sliderSlides = document.querySelectorAll('.slider-slide');
+            sliderSlides.forEach((slide, index) => {
+                slide.addEventListener('mouseenter', () => {
+                    const content = slide.querySelector('.slider-content');
+                    if (content) content.style.opacity = '1';
+                });
+                
+                slide.addEventListener('mouseleave', () => {
+                    const content = slide.querySelector('.slider-content');
+                    if (content) content.style.opacity = '0';
+                });
+            });
+        }
+        
+        // Form submission
+        const inquiryForm = document.getElementById('inquiryForm');
+        if (inquiryForm) {
+            inquiryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic form validation
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const guests = document.getElementById('guests').value;
+                
+                if (!name || !email || !guests) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                if (guests < 1 || guests > 12) {
+                    alert('Number of guests must be between 1 and 12.');
+                    return;
+                }
+                
+                // In a real implementation, this would submit to a server
+                alert('Thank you for your inquiry. Our concierge will contact you within 4 hours.');
+                inquiryForm.reset();
+            });
+        }
         
         // Scroll Animations
         const fadeElements = {
@@ -1694,29 +1966,27 @@
                     }, 200);
                 }
             }
+            
+            // Slider heading animation
+            const sliderHeading = document.querySelector('.slider-heading');
+            if (sliderHeading) {
+                const sliderHeadingTop = sliderHeading.getBoundingClientRect().top;
+                if (sliderHeadingTop < window.innerHeight - 80) {
+                    sliderHeading.classList.add('visible');
+                }
+            }
         };
         
-        // Form submission
-        const inquiryForm = document.getElementById('inquiryForm');
-        if (inquiryForm) {
-            inquiryForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // In a real implementation, this would submit to a server
-                alert('Thank you for your inquiry. Our concierge will contact you within 4 hours.');
-                inquiryForm.reset();
-            });
-        }
-        
-        // Parallax effect on scroll for hero background
+        // Improved scroll handling with throttling
+        let scrollTimeout;
         window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.backgroundPositionY = scrolled * 0.4 + 'px';
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
             }
             
-            fadeInOnScroll();
+            scrollTimeout = window.requestAnimationFrame(() => {
+                fadeInOnScroll();
+            });
         });
         
         // Initialize animations on load
@@ -1731,6 +2001,15 @@
                     firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
                 }, 800);
             }
+            
+            // Fix for mobile viewport height
+            function setVH() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setVH();
+            window.addEventListener('resize', setVH);
         });
         
         // Current year for footer
@@ -1740,6 +2019,16 @@
                 yearElement.innerHTML = yearElement.innerHTML.replace('2026', new Date().getFullYear());
             }
         });
+        
+        // Prevent zoom on double-tap (mobile)
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
